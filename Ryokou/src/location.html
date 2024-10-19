@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryokou</title>
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <style>
+        /* CSS for Weather Forecast Form */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.header {
+    background-color: rgb(16, 16, 16);
+    color: rgb(163, 163, 163);
+    padding: 10px 0;
+    font-size: small;
+}
+
+.header-content {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: #fff;
+}
+
+.contact-info img {
+    width: 15px;
+    height: auto;
+}
+
+.menu-container {
+    width: 100%;
+    background-color: rgb(32, 32, 32);
+    padding: 10px 0 18px;
+    padding-top: 18px;
+}
+
+.menu-content {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    color: #fff;
+}
+
+.nav-items a {
+    text-decoration: none;
+    color: #fff;
+    font-size: small;
+}
+
+.footer {
+    background-color: rgb(16, 16, 16);
+    color: rgb(163, 163, 163);
+    font-size: small;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.weather-form, .read-form {
+    margin: 40px auto;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+}
+
+.weather-form input, .read-form input {
+    padding: 15px;
+    font-size: medium;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 70%;
+    margin-right: 10px;
+}
+
+.weather-form button, .read-form button, .save-box button {
+    padding: 15px;
+    font-size: medium;
+    cursor: pointer;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.weather-form button:hover, .read-form button:hover, .save-box button:hover {
+    background-color: #218838;
+}
+
+.weather-result, .read-result {
+    margin: 20px auto;
+    text-align: justify;
+    text-align-last: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+}
+
+.weather-result img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.save-box {
+    margin: 20px auto;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    display: none;
+}
+
+.read-result textarea {
+    width: 90%;
+    height: 150px;
+    font-size: medium;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.read-result button {
+    padding: 10px;
+    font-size: medium;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.read-result button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Start -->
+        <div class="header">
+            <div class="header-content">
+                <div class="contact-info">
+                    <img src="images/phone.png" alt="Phone Icon">+6017-620 7253
+                    <img src="images/email.png" alt="Email Icon">asmawiaiman@gmail.com
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-container">
+            <div class="menu-content">
+                <a href="index.html" style="text-decoration: none;"><h1 style="font-family: 'Times New Roman', Times, serif; color: #fff;">Ryokou<span style="font-size: small; vertical-align: super;">&reg;</span></h1></a>
+                <div class="nav-items">
+                    <a href="location.html" style="font-weight: bold;">LOCATION</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weather Form Start -->
+        <div class="weather-form">
+            <h2>Check the Weather</h2>
+            <input type="text" id="city" placeholder="Enter city name">
+            <button onclick="getWeather()">Get Weather</button>
+        </div>
+        <div class="weather-result" id="weatherResult"></div>
+        <div class="save-box" id="saveBox">
+            <button onclick="saveWeatherData()">Save</button>
+        </div>
+        <!-- Weather Form End -->
+
+        <!-- Read Form Start -->
+        <div class="read-form">
+            <h2>Read Saved Weather Information</h2>
+            <input type="text" id="fileName" placeholder="Enter file name">
+            <button onclick="readWeatherData()">Read</button>
+        </div>
+        <div class="read-result" id="readResult"></div>
+        <!-- Read Form End -->
+
+        <div class="footer">
+            <center>
+                <h1>Ryokou &copy; 2024</h1><br><br><br>
+                <h3>Asmawi Aiman Mohd Sani</h3>
+                <h3>ICS23-08-017</h3>
+            </center>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
