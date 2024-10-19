@@ -21,7 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f9f9f9;
+    background-image: url("images/background.png");
     min-height: 100vh;
 }
 
@@ -185,6 +185,11 @@ body {
 .read-result button:hover {
     background-color: #0056b3;
 }
+.toggle-button {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
 
     </style>
 </head>
@@ -194,6 +199,11 @@ body {
         <div class="header">
             <div class="header-content">
                 <div class="contact-info">
+                    <div class="song">
+                        <img src="images/music.png" alt="Toggle Music" class="toggle-button" id="toggleButton">
+                        <audio id="idolAudio" src="images/Teenage Blue.mp3"></audio>
+                        <audio id="SainWaBAudio" src="images/Same Blue.mp3"></audio>
+                    </div>
                     <img src="images/phone.png" alt="Phone Icon">+6017-620 7253
                     <img src="images/email.png" alt="Email Icon">asmawiaiman@gmail.com
                 </div>
@@ -205,6 +215,7 @@ body {
                 <a href="index.html" style="text-decoration: none;"><h1 style="font-family: 'Times New Roman', Times, serif; color: #fff;">Ryokou<span style="font-size: small; vertical-align: super;">&reg;</span></h1></a>
                 <div class="nav-items">
                     <a href="location.html" style="font-weight: bold;">LOCATION</a>
+                    <a href="contact.html" style="font-weight: bold;">ABOUT</a>
                 </div>
             </div>
         </div>
@@ -215,7 +226,7 @@ body {
             <input type="text" id="city" placeholder="Enter city name">
             <button onclick="getWeather()">Get Weather</button>
         </div>
-        <div class="weather-result" id="weatherResult"></div>
+        <div class="weather-result" id="weatherResult">Result:</div>
         <div class="save-box" id="saveBox">
             <button onclick="saveWeatherData()">Save</button>
         </div>
@@ -227,7 +238,7 @@ body {
             <input type="text" id="fileName" placeholder="Enter file name">
             <button onclick="readWeatherData()">Read</button>
         </div>
-        <div class="read-result" id="readResult"></div>
+        <div class="read-result" id="readResult">Result:</div>
         <!-- Read Form End -->
 
         <div class="footer">
@@ -240,5 +251,6 @@ body {
     </div>
 
     <script src="script.js"></script>
+    <script src="audio-control.js"></script>
 </body>
 </html>

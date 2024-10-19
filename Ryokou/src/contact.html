@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryokou</title>
+    <title>Ryokou - Contact</title>
     <link rel="icon" type="image/x-icon" href="images/logo.png">
     <style>
         * {
@@ -14,24 +14,23 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             max-width: 100%;
-            overflow-x: hidden; 
-            height: 100vh;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            background-image: url(images/background.png);
+            min-height: 100vh;
         }
         .container {
-            max-width: 100%;
-            padding: 0;
-            position: relative;
-            flex: 1;
+            width: 100%;
             display: flex;
             flex-direction: column;
         }
         .header {
             background-color: rgb(16, 16, 16);
             color: rgb(163, 163, 163);
-            font-size: small;
             padding: 10px 0;
+            font-size: small;
         }
         .header-content {
             width: 80%;
@@ -39,7 +38,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
         }
         .contact-info {
             display: flex;
@@ -51,43 +49,14 @@
             width: 15px;
             height: auto;
         }
-        .img1 {
-            background-image: url("images/img1.png"); 
-            min-height: 850px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative; 
-            flex: 1;
-        }
-        .overlay {
-            position: absolute; 
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 0.85;
-            z-index: 1;
-        }
-        .caption {
-            position: relative;
-            width: 100%;
-            text-align: center; 
-            z-index: 2;
-        }
         .menu-container {
-            width: 80%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            width: 100%;
+            background-color: rgb(32, 32, 32);
             padding: 10px 0 18px;
             padding-top: 18px;
-            border-bottom: 1px solid white;
         }
         .menu-content {
-            width: 100%;
-            margin-top: 2-px;
+            width: 80%;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -104,103 +73,73 @@
             color: #fff; 
             font-size: small; 
         }
-        .cart-icon {
-            width: 30px;
-            height: auto;
-        }
         .cart-wrapper {
             border: 1px solid white;
             border-radius: 20px;
             padding: 5px 15px;
-            padding-left: 20px;
             display: flex;
             align-items: center;
         }
-        .middle-title {
-            position: absolute;
-            top: 500%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
+        .cart-icon {
+            width: 30px;
+            height: auto;
         }
-        .middle-title h1 {
-            font-size: 36px;
-            font-weight: bold;
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .login-container h2 {
             margin-bottom: 20px;
+            color: #333;
         }
-        .middle-title h2 {
-            font-size: 18px;
-            margin-bottom: 30px;
-            font-weight: normal;
-        }
-        .search-bar {
-            display: flex;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 15px 15px 15px 35px;
-            border-radius: 30px;
-            border: 2px solid white;
-            width: 600px; 
-            margin: 0 auto;
-            justify-content: center;
-        }
-        .search {
-            flex: 1;
-            border: none;
-            background: transparent;
-            color: white;
-            font-size: 16px;
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
             outline: none;
-            padding: 5px 15px 5px 10px;
         }
-        .search::placeholder {
-            color: white;
-            font-size: large;
+        .login-container input[type="checkbox"] {
+            margin-right: 10px;
         }
-        .search-bar img {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-            margin-right: 20px;
-        }
-        .box {
-            background-color: rgb(16, 16, 16);
-            padding: 50px;
-            width: 100%; 
-        }
-  
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px 0;
-            position: relative;
-            z-index: 2;
-        }
-        .stat {
-            flex: 1;
-            margin-top: 100px;
-        }
-        .stat-number {
-            font-size: 48px;
-            font-weight: bold;
-        }
-        .stat-text {
-            margin-top: 5px;
+        .login-container label {
+            color: #666;
             font-size: 14px;
         }
-        .line {
-            width: 50px;
-            height: 2px;
-            border: 2px solid white;
-            margin: 5px auto;
-            margin-top: 25px;
-            margin-bottom: 40px;
+        .button-container {
+            display: flex;
+            justify-content: center; 
+            gap: 10px; 
+            margin-top: 10px;
+            margin-bottom: 20px;
         }
-        
+
+        .login-container button {
+            width: 140px; 
+            padding: 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .login-btn {
+            background-color: orangered;
+            color: white;
+        }
+
+        .register-btn {
+            background-color: #e0e0e0;
+            color: #333;
+        }
         .footer{
             background-color: rgb(16, 16, 16);
             color: rgb(163, 163, 163);
@@ -208,25 +147,16 @@
             padding-top: 50px;
             padding-bottom: 100px;
         }
-        .caption span.border {
-            color: #fff;
-            padding: 18px;
-            font-size: 30px;
-        }
-        .img3 .caption {
-            position: absolute;
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            color: white;
-            text-align: center;
-        }
-        
         .toggle-button {
             width: 100px;
             height: 100px;
             cursor: pointer;
         }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
         .dropdown {
             position: relative;
             display: inline-block;
@@ -241,7 +171,7 @@
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgb(45, 45, 45);
-            left: 0;
+            
         }
 
         .dropdown-menu a {
@@ -305,45 +235,36 @@
             background-color: #575757;
             color: #fff;
         }
-        .toggle-button {
-            width: 100px;
-            height: 100px;
+        .cart-wrapper:hover{
             cursor: pointer;
         }
-        
-
         @media (max-width: 768px) {
-            .header-content, .menu-container, .nav-items {
+            .login-container {
+                width: 80%;
+            }
+            .auth-links {
                 flex-direction: column;
             }
-            .toggle-button {
-                width: 50px;
-                height: 50px;
-            }
-            .middle-title h1 {
-                font-size: 18px;
-            }
-            .middle-title h2 {
-                font-size: 14px;
-            }
-            .search-bar {
-                width: 90%;
-            }
-            .img1 {
-                min-height: 50vh;
-            }
-            .stat-number {
-                font-size: 24px;
-            }
-            .stat {
-                margin-top: 20px;
+            .header-content {
+                flex-direction: column;
             }
         }
-        
+
+        @media (max-width: 480px) {
+            .login-container {
+                width: 90%;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Header Start -->
         <div class="header">
             <div class="header-content">
                 <div class="contact-info">
@@ -357,25 +278,26 @@
                 </div>
             </div>
         </div>
-        <div class="img1">
-            <div class="overlay" style=" background: linear-gradient(to bottom right, rgb(0, 132, 255), rgba(0, 132, 255, 0.244));"></div>
-            <div class="caption">
-                <div class="menu-container">
-                    <div class="menu-content">
-                        <a href="index.html" style="text-decoration: none;"><h1 style="font-family: 'Times New Roman', Times, serif; color: #fff;">Ryokou<span style="font-size: small; vertical-align: super;">&reg;</span></h1></a>
-                        <div class="nav-items">
-                                <a href="location.html" style="font-weight: bold;">LOCATION</a>
-                                <a href="contact.html" style="font-weight: bold;">ABOUT</a>
-                            </div>
-                        </div>
-                </div>
-                <div class="middle-title">
-                    <h1>Making Your Life Easier</h1>
-                    <h2>Help you get your advice faster than ever</h2>
+        
+        <div class="menu-container">
+            <div class="menu-content">
+                <a href="index.html" style="text-decoration: none;"><h1 style="font-family: 'Times New Roman', Times, serif; color: #fff;">Ryokou<span style="font-size: small; vertical-align: super;">&reg;</span></h1></a>
+                <div class="nav-items">
+                        <a href="location.html" style="font-weight: bold;">LOCATION</a>
+                        <a href="contact.html" style="font-weight: bold;">ABOUT</a>
                 </div>
             </div>
         </div>
-        <div style="background-color: #fff; padding: 20px;"></div>
+
+        <!-- Login Form Start -->
+        <div class="login-container">
+            <h2>ABOUT US</h2><br>
+            <p><h3>Address: </h3>KOLEJ PROFESSIONAL MARA INDERA MAHKOTA, BANDAR INDERA MAHKOTA, 25200 KUANTAN, PAHANG</p><br>
+            <p><h3>Email: </h3>asmawiaiman@gmail.com</p><br>
+            <p><h3>Phone Number: </h3>+6017-620 7253</p><br>
+            <p><h3>Developer: </h3>ASMAWI AIMAN MOHD SANI</p><br>
+        </div>
+
         <div class="footer">
             <center>
                 <h1>Ryokou &copy; 2024</h1><br><br><br>
@@ -383,7 +305,7 @@
                 <h3>ICS23-08-017</h3>
             </center>
         </div>
-        <script src="audio-control.js"></script>
     </div>
+    <script src="audio-control.js"></script>
 </body>
 </html>
