@@ -1,0 +1,23 @@
+Weather in Kuantan, Pahang, Malaysia
+
+Local Time: 2024-10-19 23:20
+
+Temperature: 26.2°C
+
+Feels Like Temperature: 29.5°C
+
+Condition: Patchy rain nearby 
+
+Maximum Temperature: 30.5°C
+
+Mininimum Temperature: 25°C
+
+Sunrise: 06:51 AM
+
+Sunset: 06:52 PM
+
+Wind Speed: 5 kph
+
+Humidity: 87%
+
+Outfit Suggestion: Bring an umbrella and wear a raincoat.
