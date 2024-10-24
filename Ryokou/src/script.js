@@ -143,3 +143,8 @@ function deleteWeatherData(fileName) {
         document.getElementById('readResult').innerHTML = '';
     });
 }
+
+
+
+
+
