@@ -36,15 +36,19 @@ async function getWeather() {
         if (condition.toLowerCase().includes('rain')) {
             outfitSuggestion = 'Bring an umbrella and wear a raincoat.';
             otherSuggestion = "Make sure you don't stay outside for a long time to avoid cold";
+            itenary = "Today's activities: Morning = Shopping in Mall, Afternoon = Trampoline Park, Evening = Cinema, Night = Indoor Restourant Dinner";
         } else if (temperature > 30) {
             outfitSuggestion = 'Wear light and comfortable clothes.';
             otherSuggestion = "Make sure you don't stay outside for a long time to avoid fever or heat stroke";
+            itenary = "Today's activities: Morning = Hiking, Afternoon = Botanical Garden, Evening = Waterpark, Night = River cruise"
         } else if (temperature < 15) {
             outfitSuggestion = 'Wear warm clothes to stay comfortable.';
             otherSuggestion = "Make sure you don't stay outside for a long time to avoid hypothermia";
+            itenary = "Today's activities: Morning = Brisk walk, Afternoon = Photograph at park, Evening = Ice skating, Night = Hot spring"
         } else {
             outfitSuggestion = 'A casual outfit should be fine.';
             otherSuggestion = "Enjoy your day while it lasts";
+            itenary = "Today's activities: Morning = Jogging, Afternoon = Park, Evening = Nippon Sushi, Night = Night market"
         }
 
         document.getElementById('weatherResult').innerHTML = `
@@ -61,6 +65,7 @@ async function getWeather() {
             <p>Humidity: ${humidity}%</p>
             <p>Outfit Suggestion: ${outfitSuggestion}</p>
             <p>Other Suggestion: ${otherSuggestion}</p>
+            <p>Itenary Suggestion: ${itenary}</p>
         `;
 
         document.getElementById('saveBox').style.display = 'block';
