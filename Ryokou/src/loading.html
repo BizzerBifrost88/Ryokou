@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ryokou</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #3654af;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .loading {
+            width: 200px;
+            height: 4px;
+            background-color: #252525;
+            margin: 2rem auto;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .loading-bar {
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            animation: loading 2s infinite ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes loading {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Ryokou<span style="font-size: small; vertical-align: super;">&reg;</span></div><br>
+        <p>Please wait for loading to finish</p>
+        <p>Do not close the application</p>
+        <p>Loading...</p><br><br>
+        <div class="loading">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+    <script>
+        setTimeout(() => {
+            window.location.href = 'index.html';  
+        }, 6000);
+    </script>
+</body>
+</html>
