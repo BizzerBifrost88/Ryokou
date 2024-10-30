@@ -65,7 +65,7 @@ async function getWeather() {
             <p>Humidity: ${humidity}%</p>
             <p>Outfit Suggestion: ${outfitSuggestion}</p>
             <p>Other Suggestion: ${otherSuggestion}</p>
-            <p>Itenary Suggestion: ${itenary}</p>
+            <p>Itenary Suggestion: ${itenary}</p><br><br>
         `;
 
         document.getElementById('saveBox').style.display = 'block';
