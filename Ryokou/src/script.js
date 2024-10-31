@@ -10,7 +10,7 @@ async function getWeather() {
         return;
     }
     const apiKey = '32804b24a847407391c53709241010';
-    const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}`;
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}    `;
 
     try {
         const response = await fetch(url);
@@ -32,6 +32,8 @@ async function getWeather() {
         const maxTemp = data.forecast.forecastday[0].day.maxtemp_c;
         const minTemp = data.forecast.forecastday[0].day.mintemp_c;
         let outfitSuggestion = '';
+        let  otherSuggestion='';
+        let itenary='';
 
         if (condition.toLowerCase().includes('rain')) {
             outfitSuggestion = 'Bring an umbrella and wear a raincoat.';
